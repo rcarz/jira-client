@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>net.rcarz</groupId>
+  <groupId>io.takari.jira</groupId>
   <artifactId>jira-client</artifactId>
-  <version>0.6-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <version>0.7-SNAPSHOT</version>
+  <packaging>takari-jar</packaging>
 
   <name>jira-client</name>
   <description>A simple JIRA REST client</description>
@@ -21,6 +21,7 @@
   <scm>
     <url>https://github.com/rcarz/jira-client</url>
     <connection>https://github.com/rcarz/jira-client</connection>
+    <tag>HEAD</tag>
   </scm>
 
   <developers>
@@ -32,23 +33,35 @@
   </developers>
 
   <parent>
-    <groupId>org.sonatype.oss</groupId>
-    <artifactId>oss-parent</artifactId>
-    <version>7</version>
+    <groupId>io.takari</groupId>
+    <artifactId>takari</artifactId>
+    <version>28</version>
   </parent>
 
   <dependencies>
 
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpcore</artifactId>
+      <version>4.4.12</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
       <artifactId>httpclient</artifactId>
-      <version>4.2.5</version>
+      <version>4.5.9</version>
     </dependency>
 
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
       <artifactId>httpmime</artifactId>
-      <version>4.2.5</version>
+      <version>4.5.9</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+      <version>2.5</version>
     </dependency>
 
     <dependency>
@@ -68,6 +81,20 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-all</artifactId>
+      <version>1.10.19</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.powermock</groupId>
+      <artifactId>powermock-core</artifactId>
+      <version>1.6.3</version>
       <scope>test</scope>
     </dependency>
 
